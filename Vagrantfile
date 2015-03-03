@@ -18,8 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.winrm.password = "Passw0rd!"
 
   # Set the version of chef to install using the vagrant-omnibus plugin
-  # config.omnibus.chef_version = :latest
-  config.omnibus.install_url = 'https://opscode-omnibus-packages.s3.amazonaws.com/windows/2008r2/x86_64/chef-client-12.0.3-1.msi'
+  config.omnibus.chef_version = "11.18.0"
 
   # Every Vagrant virtual environment requires a box to build off of.
   # If this value is a shorthand to a box in Vagrant Cloud then 
