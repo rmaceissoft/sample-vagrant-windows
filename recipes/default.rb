@@ -15,3 +15,27 @@ windows_package 'Mozilla Firefox 5.0 (x86 en-US)' do
   installer_type :custom
   action :install
 end
+
+# install git
+include_recipe "git::default"
+
+# install IIS
+include_recipe "iis::default"
+
+# create project directory root
+directory "c:\\source_code"
+
+# pull source code from github
+git "c:\\source_code" do
+  repository "git://github.com/rmaceissoft/sample-static-site.git"
+  reference "master"
+  action :sync
+end
+
+# add a new virtual site
+iis_site 'hello_world' do
+  protocol :http
+  port 81
+  path "c:\\source_code"
+  action [:add,:start]
+end

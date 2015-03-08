@@ -7,3 +7,5 @@ long_description 'Installs/Configures sample-vagrant-windows'
 version          '0.1.0'
 
 depends 'windows',              '~> 1.36.6'
+depends 'iis',                  '~> 4.1.0'
+depends 'git',                  '~> 4.1.0'
